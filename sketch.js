@@ -1,8 +1,5 @@
-// Rain[] drops = new Rain[110];
-// Views scene;
-// int option = 1;
 let drops = [];
-let option;
+let option = 1;
 let scene;
 
 
@@ -10,41 +7,46 @@ function setup() {
   option = 1;
   scene = new Views();
 
-  createCanvas(600, 500);
-  
+  createCanvas(windowWidth, windowHeight);
+
   for (let i = 0; i < 110; i++) {
     drops.push(new Rain());
   }
 }
 
 function draw() {
+  // if (option == 1) {
+  //   background(0);
+  //   for (let i = 0; i < drops.length; i++) {
+  //     drops[i].fall();
+  //     drops[i].display();
+  //   }
+  // }
+
   if (option == 1) {
-    background(0);
-    for (let i = 0; i < drops.length; i++) {
-      drops[i].fall();
-      drops[i].display();
-    }
-  }
-  
-  if (option ==2) {
-    background('#111855');
+    background('#272939');
+    scale(1.5);
     scene.display();
     scene.drawStars();
     scene.drawBoat();
     scene.makeWaterOverlap();
+    scene.shine();
     scene.drawRocks();
     scene.sail();
-    scene.shine();
+    scene.fog();
   }
 
-  if (option ==3) {
-    background('#1E2A46');
+  if (option == 2) {
+    scale(1.5);
+    background('#1E1F2C');
     scene.display();
     scene.drawCloud(400, 80);
     scene.drawCloud(300, 20);
     scene.drawCloud(540, 30);
     scene.drawCloud(150, 60);
     scene.drawCloud(20, 30);
+    scene.drawCloud(700, 30);
+    scene.drawCloud(860, 60);
     scene.drawBoat();
     scene.makeWaterOverlap();
     scene.drawRocks();
@@ -54,12 +56,4 @@ function draw() {
     }
   }
 
-}
-
-
-function keyPressed() {
-  option++;
-  if (option>3) {
-    option = 1;
-  }
 }
