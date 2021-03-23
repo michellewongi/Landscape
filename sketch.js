@@ -1,11 +1,13 @@
 let drops = [];
 let option = 1;
 let scene;
+let foggy;
 
 
 function setup() {
   option = 1;
   scene = new Views();
+  foggy = new Rain();
 
   createCanvas(windowWidth, windowHeight);
 
@@ -15,6 +17,7 @@ function setup() {
 }
 
 function draw() {
+  //taken out because nope
   // if (option == 1) {
   //   background(0);
   //   for (let i = 0; i < drops.length; i++) {
@@ -33,7 +36,7 @@ function draw() {
     scene.shine();
     scene.drawRocks();
     scene.sail();
-    scene.fog();
+    foggy.fog();
   }
 
   if (option == 2) {
@@ -48,6 +51,7 @@ function draw() {
     scene.drawCloud(700, 30);
     scene.drawCloud(860, 60);
     scene.drawBoat();
+    scene.sail();
     scene.makeWaterOverlap();
     scene.drawRocks();
     for (let i = 0; i < drops.length; i++) {
