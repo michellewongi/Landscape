@@ -16,8 +16,9 @@ function setup() {
   }
 }
 
+
 function draw() {
-  //taken out because nope
+  //taken out because didnt fit in scene
   // if (option == 1) {
   //   background(0);
   //   for (let i = 0; i < drops.length; i++) {
@@ -25,6 +26,7 @@ function draw() {
   //     drops[i].display();
   //   }
   // }
+
 
   if (option == 1) {
     background(36, 39, 43);
@@ -36,10 +38,11 @@ function draw() {
     scene.shine();
     scene.drawRocks();
     scene.sail();
-    if(foggy.checkAlive()){
+    if (foggy.checkAlive()) {
       foggy.display();
     }
   }
+
 
   if (option == 2) {
     scale(1.5);
@@ -61,5 +64,6 @@ function draw() {
       drops[i].display();
     }
   }
+
 
 }

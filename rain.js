@@ -4,7 +4,6 @@ class Rain {
     this.x = random(width);
     this.y = random(height);
     this.speed = random(5, 9);
-    // this.o = 100;
   } // end of constructor
 
 
@@ -29,7 +28,7 @@ class Rain {
     //   fill(color(mouseX/5, mouseX/3, 255, 200));
     //   bezier(this.x, this.y, this.x+59, this.y+93, this.x-54, this.y+100, this.x, this.y);
     // }
-  }// end of display method
+  } // end of display method
 
 
-}// end of class
+} // end of class
