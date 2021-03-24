@@ -7,7 +7,7 @@ let foggy;
 function setup() {
   option = 1;
   scene = new Views();
-  foggy = new Rain();
+  foggy = new Fog();
 
   createCanvas(windowWidth, windowHeight);
 
@@ -27,7 +27,7 @@ function draw() {
   // }
 
   if (option == 1) {
-    background('#272939');
+    background(36, 39, 43);
     scale(1.5);
     scene.display();
     scene.drawStars();
@@ -36,12 +36,14 @@ function draw() {
     scene.shine();
     scene.drawRocks();
     scene.sail();
-    foggy.fog();
+    if(foggy.checkAlive()){
+      foggy.display();
+    }
   }
 
   if (option == 2) {
     scale(1.5);
-    background('#1E1F2C');
+    background(23, 23, 31);
     scene.display();
     scene.drawCloud(400, 80);
     scene.drawCloud(300, 20);

@@ -1,18 +1,31 @@
 class Views {
 
   constructor() {
-    this.move = 2;
-    this.x = 100;
-  }
+    this.move = 1;
+    this.x = 0;
+  } // end of constructor
+
 
   sail() {
     //boat moving
     this.x = this.x + this.move;
-    if (this.x > windowWidth - 200) {
-      option = 2;
-      this.x = this.x + this.move;
+    if (option == 1) {
+      if (this.x > windowWidth - 200) {
+        option = 2;
+        this.x = 100;
+        this.x = this.x + this.move;
+      }
     }
-  }
+
+    else if (option == 2) {
+      if (this.x > windowWidth - 200) {
+        option = 1;
+        this.x = 100;
+        this.x = this.x + this.move;
+      }
+    }
+  } // end of sail method
+
 
   shine() {
     //moonlight
@@ -24,14 +37,14 @@ class Views {
     vertex(mouseX, 382);
     vertex(mouseX - 247, 382);
     endShape();
-  }
+  } // end of shine method
 
 
 
 display() {
   //lake
   noStroke();
-  fill('#153371');
+  fill(37, 51, 74);
   rect(0, 367, windowWidth, 133);
 
 
@@ -48,7 +61,7 @@ display() {
   translate(350, 0);
   bezier(600, 360, 463, 29, 336, 251, 204, 360);
   pop();
-  fill('#1D5527');
+  fill(36, 80, 41);
   rect(0, 349, windowWidth, 30);
   bezier(600, 360, 463, 29, 336, 251, 204, 360);
 
@@ -74,7 +87,7 @@ display() {
   if (option == 2) { //changes the window to black if key is pressed
     fill(0);
   } else {
-    fill('#CCCEAD');
+    fill(184, 163, 106, 100);
   }
   rect(352, 321, 20, 20);
 
@@ -101,7 +114,29 @@ display() {
   noStroke();
   ellipse(460, 45, 60, 60);
 
-}
+  //landline
+  fill(0);
+  rect(50, 127, 5, 233);
+  rect(500, 127, 5, 233);
+  rect(900, 127, 5, 233);
+  noFill();
+  stroke(0);
+  strokeWeight(1);
+  bezier(504,143,331,232,192,230,56,142);
+  bezier(504,143,328,210,194,204,56,142);
+  bezier(499,135,323,202,189,196,51,134);
+  bezier(905,136,772,208,617,215,502,140);
+  bezier(905,136,772,208,643,263,502,140);
+  bezier(908,133,777,193,645,189,505,137);
+  fill(0);
+  rect(38, 133, 30, 2);
+  rect(488, 133, 30, 2);
+  rect(888, 133, 30, 2);
+  noStroke();
+
+
+} // end of display method
+
 
 drawBoat() {
   //boat
@@ -112,11 +147,12 @@ drawBoat() {
   fill('#403325');
   rect(this.x - 9, 328, 8, 100);
   arc(this.x - 4, 410, 180, 100, 0, PI, CHORD);
-}
+} // end of drawBoat
+
 
 drawCloud(x_, y_) {
   //clouds
-  fill(200);
+  fill(102, 102, 102);
   ellipse(x_ + 49, y_ + 14, 190, 50);
   ellipse(x_ - 4, y_, 70, 50);
   ellipse(x_ + 44, y_ - 4, 70, 60);
@@ -124,7 +160,8 @@ drawCloud(x_, y_) {
   ellipse(x_, y_ + 20, 70, 60);
   ellipse(x_ + 50, y_ + 27, 90, 60);
   ellipse(x_ + 55, y_ + 20, 90, 60);
-}
+} // end of drawCloud
+
 
 drawStars() {
   //stars
@@ -148,7 +185,8 @@ drawStars() {
   ellipse(900, 50, 3, 3);
   ellipse(860, 70, 3, 3);
   ellipse(900, 170, 3, 3);
-}
+} // end of drawStars
+
 
 drawRocks() {
   //rocks
@@ -168,13 +206,15 @@ drawRocks() {
   vertex(1000, 500);
   vertex(1000, 807);
   endShape();
-}
+} // end of drawRocks
+
 
 makeWaterOverlap() {
   //lake water overlap
   noStroke();
-  fill(21, 51, 113, 140);
+  fill(37, 51, 74, 140);
   rect(0, 440, windowWidth, 67);
-}
+} // end of makeWaterOverlap
 
-}
+
+} // end of class

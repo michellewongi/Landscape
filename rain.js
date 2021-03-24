@@ -4,8 +4,9 @@ class Rain {
     this.x = random(width);
     this.y = random(height);
     this.speed = random(5, 9);
-    this.o = 200;
-  }
+    // this.o = 100;
+  } // end of constructor
+
 
   fall() {
     //rain falling
@@ -13,26 +14,9 @@ class Rain {
     if (this.y > height) {
       this.y = 0;
     }
-  }
+  } // end of fall method
 
-  /*i tried to make it so opacity of the foggy
-  fades more consistently but this freezes the screen*/
-  // fade() {
-  //   for (i = 20; i > 0; i -= 5) {
-  //     this.o -= i;
-  //   }
-  // }
 
-  //this fog method makes the boat move super slow
-  fog() {
-    // for (this.x = 700; this.x < 1000; this.x += 5) {
-    //   for (this.y = 0; this.y < 800; this.y += 5) {
-    //     fill(255, 255, 255, 1);
-    //     ellipse(random(this.x), random(this.y), 200, 100);
-    //   }
-    // }
-    // this.o-=3;
-  }
 
   display() {
     noStroke();
@@ -45,5 +29,7 @@ class Rain {
     //   fill(color(mouseX/5, mouseX/3, 255, 200));
     //   bezier(this.x, this.y, this.x+59, this.y+93, this.x-54, this.y+100, this.x, this.y);
     // }
-  }
-}
+  }// end of display method
+
+
+}// end of class
