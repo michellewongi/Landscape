@@ -1,7 +1,5 @@
 class Fog {
   constructor() {
-    this.x;
-    this.y;
     this.o = 10;
     this.alive = true;
     this.timer = millis();
