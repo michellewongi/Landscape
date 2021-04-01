@@ -12,13 +12,13 @@ class Views {
     if (option == 1) {
       if (this.x > windowWidth - 200) {
         option = 2;
-        this.x = 100;
+        this.x = 0;
         this.x = this.x + this.move;
       }
     } else if (option == 2) {
       if (this.x > windowWidth - 200) {
         option = 1;
-        this.x = 100;
+        this.x = 0;
         this.x = this.x + this.move;
       }
     }
@@ -135,6 +135,11 @@ class Views {
 
 
   drawBoat() {
+    //person on boat
+    fill(0);
+    ellipse(this.x - 30, 358, 25, 35);
+    rect(this.x - 45, 375, 30, 50);
+
     //boat
     stroke(0);
     strokeWeight(0.5);

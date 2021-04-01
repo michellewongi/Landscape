@@ -30,10 +30,10 @@ class Fog {
   /*Lilly Lin the TA helped me with the timer function
   https://editor.p5js.org/lillylin/sketches/2HmXWEqLM */
   checkAlive() {
-    if (millis() - this.timer > 4000) {
+    if (millis() - this.timer > 5000) {
       this.o--;
     }
-    if (millis() - this.timer > 6000) {
+    if (millis() - this.timer > 7000) {
       this.alive = false;
     }
     return this.alive;
