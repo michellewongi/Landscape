@@ -89,9 +89,9 @@ class Views {
     rect(352, 321, 20, 20);
 
     //person
-    fill(0);
-    ellipse(360, 327, 8, 10);
-    rect(355, 332, 10, 9);
+    // fill(0);
+    // ellipse(360, 327, 8, 10);
+    // rect(355, 332, 10, 9);
 
     //docks
     fill(20);
